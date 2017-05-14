@@ -6,7 +6,7 @@ $(document).ready(function(){
     anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
   });
 
-  $('.owl-carousel').owlCarousel({
+  $('#owl-carousel').owlCarousel({
     items: 1,
     dots: true,
     loop: true,
@@ -21,6 +21,77 @@ $(document).ready(function(){
     // move dotsContainer outside the primary owl wrapper
     dotsContainer: '.customDots',
     animateOut: 'fadeOut'
+  });
+
+  var page2Carousel = $(".page2Carousel");
+  /*********** Слайдер 2-я страница ***********/
+  $("#page2Carousel").owlCarousel({
+    items: 3,
+    // dots: true,
+    loop: true,
+    autoplay: true,
+    nav: true,
+    autoplayTimeout: 6000,
+    smartSpeed: 1000,
+    mouseDrag : true,
+    touchDrag : true,
+    margin: 40,
+    baseClass : "page2Carousel",
+    autoHeight : false,
+    navText:false,
+    // // move navContainer outside the primary owl wrapper
+    // navContainer: '#customNav',
+    // move dotsContainer outside the primary owl wrapper
+    navContainer: '.customNav',
+    // navClass: '.customNav2page',
+    // navElement: 'div class="customNav"> </div'
+    // animateOut: 'fadeOut'
+  });
+
+  $("#page2Carousel2").owlCarousel({
+    items: 3,
+    // dots: true,
+    loop: true,
+    autoplay: true,
+    nav: true,
+    autoplayTimeout: 6000,
+    smartSpeed: 1000,
+    mouseDrag : true,
+    touchDrag : true,
+    margin: 40,
+    baseClass : "page2Carousel",
+    autoHeight : false,
+    navText:false,
+    // // move navContainer outside the primary owl wrapper
+    // navContainer: '#customNav',
+    // move dotsContainer outside the primary owl wrapper
+    navContainer: '.customNav2',
+    // navClass: '.customNav2page',
+    // navElement: 'div class="customNav"> </div'
+    // animateOut: 'fadeOut'
+  });
+
+  $("#page2Carousel3").owlCarousel({
+    items: 3,
+    // dots: true,
+    loop: true,
+    autoplay: true,
+    nav: true,
+    autoplayTimeout: 6000,
+    smartSpeed: 1000,
+    mouseDrag : true,
+    touchDrag : true,
+    margin: 40,
+    baseClass : "page2Carousel3",
+    autoHeight : false,
+    navText:false,
+    // // move navContainer outside the primary owl wrapper
+    // navContainer: '#customNav',
+    // move dotsContainer outside the primary owl wrapper
+    navContainer: '.customNav3',
+    // navClass: '.customNav2page',
+    // navElement: 'div class="customNav"> </div'
+    // animateOut: 'fadeOut'
   });
 
   var topHeader__left = $(".topHeader__left");
@@ -94,7 +165,7 @@ $(document).ready(function(){
   });
 
 
-   var menu2 = $(".topHeader__right--OpenMenu2");
+  var menu2 = $(".topHeader__right--OpenMenu2");
   $(menu2).hide();
   $(buttonCloseMenu2).hide();  
   $(buttonOpenMenu2).on("click", function(){
@@ -112,7 +183,7 @@ $(document).ready(function(){
 
 
 
-/*************************************************/
+  /*************************************************/
   var mainScreenCenterText = $(".mainScreenCenterText");
 
   $.fn.animate_Text = function() {
@@ -189,6 +260,7 @@ $(document).ready(function(){
   var tabMenu = $(".tab-menu");
   var tabItem = $(".tab-item");
   $(".tab-item").hide();
+  $('.tab-item:first').show();
   $(tabMenu).click(function(e) {
     event.preventDefault();
     $(".mainPageCenterContent, .wrapper__media ").fadeOut();
@@ -197,9 +269,77 @@ $(document).ready(function(){
   }).eq().addClass("active-panel"); 
 
 
+  var tab1ContentMenu__wrapper = $(".tab1ContentMenu__wrapper");
+  var tab1Content__item = $(".tab1Content__item");
+  function hideTab1Content__item(){
+    $(tab1Content__item).on("click",function(){
+      $(tab1ContentMenu__wrapper).hide();
+      $(tab1ProductWrapper).fadeIn();
+    });
+
+  }
+  
+
+  var tab1Content__item1 = $(".tab1Content__item1");
+  var tab1Content__item2 = $(".tab1Content__item2");
+  var tab1Content__item3 = $(".tab1Content__item3");
+
+  var tab1ProductWrapperItem1 = $(".tab1ProductWrapper--item1");
+  var tab1ProductWrapperItem2 = $(".tab1ProductWrapper--item2");
+  var tab1ProductWrapperItem3 = $(".tab1ProductWrapper--item3");
+  var tab1ProductWrapper = $(".tab1ProductWrapper");
+  $(tab1ProductWrapper).hide();
+
+  $(tab1ProductWrapper).on("click",function() {
+    if (tab1ProductWrapper.is(":visible")) {
+      $(".centerContent__wrapper--right").css("border", "1px solid #e0e0e0;")
+    }else{
+     $(".centerContent__wrapper--right").css("border", "0")
+   };
+ });
+
+  $(tab1Content__item1).on("click",hideTab1Content__item(),function(){
+    $(tab1Content__item).hide();
+    $(tab1ProductWrapperItem3).hide();
+    $(tab1ProductWrapperItem2).hide();
+    $(tab1ProductWrapperItem1).fadeIn();
+    console.log("1")
+  });
+
+  $(tab1Content__item2).on("click",hideTab1Content__item(),function(){
+    $(tab1ProductWrapperItem1).hide();
+    $(tab1ProductWrapperItem3).hide();
+    $(tab1ProductWrapperItem2).fadeIn();
+    console.log("2")
+  });
+
+  $(tab1Content__item3).on("click",hideTab1Content__item(),function(){
+   $(tab1ProductWrapperItem1).hide();
+   $(tab1ProductWrapperItem2).hide();
+   $(tab1ProductWrapperItem3).fadeIn();
+   console.log("3")
+ });
+
+
+
+
+
+  var Page2ButtonBack = $(".2PageButtonBack");
+  $(Page2ButtonBack).on("click",function(e){
+    e.preventDefault();
+    $(tab1ProductWrapper).hide();
+    $(tab1ContentMenu__wrapper).fadeIn();
+    $(tab1Content__item).fadeIn();
+    
+
+  });
+
+
+
+
+
+
 });
-
-
 // checker **************************************************
 
 (function($){
