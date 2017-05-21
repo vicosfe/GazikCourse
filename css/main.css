@@ -252,6 +252,7 @@ body{
 	min-height: 100vh;
 	color: #fff;
 	z-index: 25;
+	display: none;
 }
 .OpenMenuMain{
 	padding: 2.625rem 4rem;
@@ -1541,7 +1542,7 @@ body{
 /********************************************************  Товары ********************************************************/
 
 .productCard{
-	max-width: 960px;
+	max-width: 1200px;
 	margin: 0 auto;
 	border: 1px solid #e0e0e0;
 	height: 600px;
@@ -1654,7 +1655,7 @@ body{
 	font-size: 1rem;
 	font-family: "GothamPro-Bold"
 }
-.productDownBlock__addInBascet {
+.productDownBlock__addInCorset {
 	min-width: 220px;
 	max-width: 300px;
 	text-align: center;
@@ -1664,12 +1665,234 @@ body{
 	padding: 0 .9375rem;
 	overflow: hidden;
 }
-.productDownBlock__addInBascet > p {
+.productDownBlock__addInCorset > p {
 	margin: 0;
 	color: #fff;
 	font-size: 1rem;
 	font-family: "GothamPro-Bold"
 }
 
+/************************************************** Корзина **************************************************/
+#page2CarouselCorset{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 0 3.75rem;
+}
+
+.corsetWrapper{
+	background-color: #FFF;
+	border: 1px solid #e0e0e0;
+	border-left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.itemCorset{
+	width: 100%;
+	max-height: 100%;
+	min-height: 529px;
+	position: relative;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-top: 0.9375rem;
+}
+.itemCorset a{
+	text-decoration: none;
+}
+.itemCorset__img{
+	width: 97px;
+	height: 389px;
+	position: relative;
+	margin: 0 auto;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-bottom: 1.4375rem;
+}
+.itemCorset__name{
+	margin-bottom: 0.3125rem;
+}
+.itemCorset__name h3{
+	font-family: "GothamPro-Medium";
+	font-size: 1.5rem;
+	color: #010101;
+	margin: 0;
+	text-align: center;
+}
+.itemCorset__description{
+	margin-bottom: 1.375rem;
+}
+.itemCorset__description p{
+	font-family: "GothamPro";
+	margin: 0;
+	text-align: center;
+	font-size: 0.75rem;
+	color: #858585;
+}
+.itemCorset__price{
+	width: 49.42%;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #232323;
+	height: 33px;
+	line-height: 2.0625rem;
+}
+.itemCorset__price p{
+	margin: 0;
+	color: #fff;
+	font-size: 1rem;
+	font-family: "GothamPro-Bold";
+}
+.customNavCorsetWrapper{
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index: 25;
+
+}
+.customNavCorset{
+	position: relative;
+}
+.customNavCorset:hover{
+	cursor: pointer;
+}
+.customNavCorset .owl-prev{
+	background-image: url(../image/arrowSliderLeft.png);
+	height: 26px;
+	width: 30px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-bottom: 0.9375rem;
+}
+.customNavCorset .owl-next{
+	background-image: url(../image/arrowSliderLeft.png);
+	height: 26px;
+	width: 30px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.tab-menu{
+	position: relative;
+}
+.corsetTab{
+	position: absolute;
+	right: 25px;
+	top: 20px;
+	color: #232323;
+	background-color: #fff;
+	font-size: 0.656rem;
+	font-family: "GothamPro-Bold";
+	width: 15px;
+	height: 15px;
+	line-height: .9375rem;
+	border-radius: 150px;
+	text-align: center;
+	z-index: 25;
+}
+.corsetWrapper > .itemHeader__left{
+	max-width: 50%;
+}
+
+/********************************************* Оплата *********************************************/
+.rewardWrapper{
+	background-color: #FFF;
+	border: 1px solid #e0e0e0;
+	border-left: 0;
+	width: 100%;
+	height: 100%;
+}
+.rewardWrapper > .itemHeader{
+	max-width: 50%;
+}
+.rewardWrapper__content{
+	height: calc(100% - 50px);
+	width: 100%;
+	position: relative;
+	padding: 0 3.75rem;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+}
+.rewardLeft{
+	width: 42.12%;
+	padding: 1.562rem 0;
+}
+.itemReward__name{
+	margin-bottom: 0.3125rem;
+}
+.itemReward__name h3{
+	font-family: "GothamPro-Medium";
+	font-size: 1.5rem;
+	color: #010101;
+	margin: 0;
+}
+.itemReward__description{
+	margin-bottom: 1.375rem;
+}
+.itemReward__description p{
+	font-family: "GothamPro";
+	margin: 0;
+	font-size: 0.75rem;
+	color: #858585;
+}
+/* ФОРМА */
+.rewardLeft__form{
+	margin-top: 2.375rem;
+}
+.rewardLeft__form  input[type="text"]{
+	display: block;
+	outline: 0;
+	border: 1px solid #d1d9dc;
+	height: 44px;
+	width: 100%;
+	border-radius: 4px;
+	margin-bottom: .9375rem;
+	color: #52565a;
+	font-family: "GothamPro-Medium";
+	font-size: .875rem;
+	padding: 0 .75rem;
+}
+.rewardLeft__form label{
+	color: #52565a;
+	font-family: "GothamPro-Medium";
+	font-size: .875rem;
+}
+.rewardLeft__form button {
+	display: block;
+	outline: 0;
+	border: 1px solid #d1d9dc;
+	height: 46px;
+	width: 100%;
+	border-radius: 4px;
+	margin-bottom: .9375rem;
+	color: #fff;
+	font-family: "GothamPro-Medium";
+	font-size: .875rem;
+	padding: 0;
+	text-align: center;
+	background-color: #353535;
+}
+.rewardLeft__form button:hover{
+	cursor: pointer;
+}
 
 
+.rewardRight{
+	margin-top: 7.625rem;
+	width: 42.12%;
+}

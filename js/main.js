@@ -82,7 +82,7 @@ $(document).ready(function(){
     mouseDrag : true,
     touchDrag : true,
     margin: 40,
-    baseClass : "page2Carousel3",
+    baseClass : "page2Carousel",
     autoHeight : false,
     navText:false,
     // // move navContainer outside the primary owl wrapper
@@ -93,6 +93,32 @@ $(document).ready(function(){
     // navElement: 'div class="customNav"> </div'
     // animateOut: 'fadeOut'
   });
+
+    $("#page2CarouselCorset").owlCarousel({
+    items: 3,
+    // dots: true,
+    loop: true,
+    autoplay: true,
+    nav: true,
+    autoplayTimeout: 6000,
+    smartSpeed: 1000,
+    mouseDrag : true,
+    touchDrag : true,
+    margin: 40,
+    baseClass : "page2Carousel3",
+    autoHeight : false,
+    navText:false,
+    // // move navContainer outside the primary owl wrapper
+    // navContainer: '#customNav',
+    // move dotsContainer outside the primary owl wrapper
+    navContainer: '.customNavCorset',
+    // navClass: '.customNav2page',
+    // navElement: 'div class="customNav"> </div'
+    // animateOut: 'fadeOut'
+  });
+
+
+
 
   var topHeader__left = $(".topHeader__left");
 
