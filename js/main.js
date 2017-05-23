@@ -165,7 +165,20 @@ $(document).ready(function(){
     offset: 1
   });
 
+/***********************************ФИЛЬТРАЦИЯ***************************************/
 
+var page2FilterPrice  = $(".2pageFilterPrice ");
+var filtrationPriceBlock = $(".filtrationPriceBlock");
+
+$(filtrationPriceBlock).hide();
+$(page2FilterPrice).on("click",function(e){
+  e.preventDefault();
+  if ($(filtrationPriceBlock).is(":visible")) {
+    $(filtrationPriceBlock).fadeOut();
+  }else{
+    $(filtrationPriceBlock).fadeIn();
+  }
+});
 
 
 

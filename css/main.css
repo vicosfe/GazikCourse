@@ -92,7 +92,10 @@ body{
 	-o-animation-duration: 2s !important;
 	animation-duration: 2s !important;
 }
-
+.customDots .owl-dot > span{
+	display: block;
+	padding: 10px 0;
+}
 .owl-dots{
 	position: relative;
 }
@@ -1148,10 +1151,92 @@ body{
 .itemHeader__left{
 	width: 50%;
 	text-align: left;
-};
+}
 .itemHeader__right{
 	width: 50%;
 	text-align: right;
+	position: relative;
+	text-align: right;
+}
+.itemHeader__right:after{
+	position: absolute;
+	content: "\f107";
+	font-family: "FontAwesome";
+	top: 50%;
+	right: -24px;
+	font-size: 1rem;
+	height: 14px;
+	font-weight: normal;
+	color: #858585;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.filtrationPriceBlock{
+	position: absolute;
+	width: 260px;
+	height: 100px;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 22px rgba(226, 221, 221, 0.73);
+	box-shadow: 0px 0px 22px rgba(226, 221, 221, 0.73);
+	z-index: 25;
+	top: 35px;
+	right: -25px;
+	padding: .9375rem 1.25rem;
+}
+.filtrationPriceForm{
+	width: 100%;
+	height: 100%;
+}
+.filtrationPriceForm__content{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+	margin-bottom: .75rem;
+}
+.filtrationPriceForm  input {
+	max-width: 78px;
+	padding: 0 .625rem;
+	max-height: 22px;
+	line-height: 1.375rem;
+	font-family: "GothamPro";
+	color: #000;
+	font-size: .75rem;
+	outline: 0;
+	border: 1px solid #f0f0f0;
+}
+.filtrationPriceBlock__minPrice p{
+	max-width: 20px;
+	margin: 0;
+	font-family: "GothamPro";
+	color: #000;
+	font-size: .75rem;
+}
+.filtrationPriceBlock__maxPrice p{
+	max-width: 20px;
+	margin: 0;
+	font-family: "GothamPro";
+	color: #000;
+	font-size: .75rem;
+}
+.filtrationPriceForm__button{
+	max-width: 90px;
+	max-height: 25px;
+	width: 100%;
+	height: 100%;
+	background-color: #4eb2f2;
+	display: block;
+	color: #fff;
+	font-family: "GothamPro";
+	font-size: .75rem;
+	border: 0;
+	outline: 0;
 }
 .itemHeader__left a{
 	font-family: "GothamPro";
@@ -1187,23 +1272,7 @@ body{
 	color: #858585;
 	text-decoration: none;
 	position: relative;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	-ms-align-items: center;
-	align-items: center;
-}
-.itemHeader__left a:after{
-	font-family: "FontAwesome";
-	content: "\f104";
-	font-size: 1rem;
-	color: #858585;
-	text-decoration: none;
-	font-weight: normal;
-	position: absolute;
-	left: -20px;
+
 }
 .itemslider{
 	height: calc(100% - 50px);
