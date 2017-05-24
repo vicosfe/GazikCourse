@@ -94,7 +94,7 @@ $(document).ready(function(){
     // animateOut: 'fadeOut'
   });
 
-    $("#page2CarouselCorset").owlCarousel({
+  $("#page2CarouselCorset").owlCarousel({
     items: 3,
     // dots: true,
     loop: true,
@@ -165,27 +165,28 @@ $(document).ready(function(){
     offset: 1
   });
 
-/***********************************ФИЛЬТРАЦИЯ***************************************/
+  /***********************************ФИЛЬТРАЦИЯ***************************************/
 
-var page2FilterPrice  = $(".2pageFilterPrice ");
-var filtrationPriceBlock = $(".filtrationPriceBlock");
+  var page2FilterPrice  = $(".2pageFilterPrice ");
+  var filtrationPriceBlock = $(".filtrationPriceBlock");
 
-$(filtrationPriceBlock).hide();
-$(page2FilterPrice).on("click",function(e){
-  e.preventDefault();
-  if ($(filtrationPriceBlock).is(":visible")) {
-    $(filtrationPriceBlock).fadeOut();
-  }else{
-    $(filtrationPriceBlock).fadeIn();
-  }
-});
+  $(filtrationPriceBlock).hide();
+  $(page2FilterPrice).on("click",function(e){
+    e.preventDefault();
+    if ($(filtrationPriceBlock).is(":visible")) {
+      $(filtrationPriceBlock).fadeOut();
+    }else{
+      $(filtrationPriceBlock).fadeIn();
+    }
+  });
 
 
 
-  var buttonOpenMenu = $(".openMenuJs")
-  var buttonCloseMenu = $(".closeMenuJs")
-  var buttonOpenMenu2 = $(".openMenuJs2")
-  var buttonCloseMenu2 = $(".closeMenuJs2")
+  var buttonOpenMenu = $(".openMenuJs");
+  var buttonCloseMenu = $(".closeMenuJs");
+  var buttonOpenMenu2 = $(".openMenuJs2");
+  var buttonCloseMenu2 = $(".closeMenuJs2");
+  var searchPromo = $(".topHeader__right2--search");
 
   var menu = $(".topHeader__right--OpenMenu");
   $(menu).hide();
@@ -210,6 +211,7 @@ $(page2FilterPrice).on("click",function(e){
   $(buttonOpenMenu2).on("click", function(){
     $(menu2).fadeIn();
     $(buttonOpenMenu2).hide();
+    $(searchPromo).hide();
     $(buttonCloseMenu2).fadeIn();
 
   });
@@ -217,8 +219,30 @@ $(page2FilterPrice).on("click",function(e){
   $(buttonCloseMenu2).on("click", function(){
     $(menu2).hide();
     $(buttonCloseMenu2).hide();
+    $(searchPromo).fadeIn();
     $(buttonOpenMenu2).removeClass("fadeInRight").fadeIn();
   });
+
+
+  /********************************Поиск*********************************/
+
+  var centerContent2Page = $(".centerContent");
+  var grid2 =$(".grid2");
+  var searchContent = $(".searchContent");
+  $(searchContent).hide();
+  $(searchPromo).on("click", function () {
+    if ($(searchContent).is(":visible")) {
+      $(searchContent).hide();
+      $(centerContent2Page).fadeIn();
+    }else{
+     $(centerContent2Page).hide();
+     $(grid2).hide();
+     $(".searchContent").fadeIn();
+   };
+   
+ });
+
+
 
 
 

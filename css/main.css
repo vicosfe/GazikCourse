@@ -526,7 +526,7 @@ body{
 .openMenuJs p{
 	margin: 0;
 	text-transform: uppercase;
-	font-family: Sans-serif;
+	font-family: "GothamPro";
 	-ms-align-items: center;
 	align-items: center;
 	display: -webkit-flex;
@@ -536,6 +536,7 @@ body{
 	display: flex;
 	color: #fff;
 	height: 19px;
+	font-size: .875rem;
 }
 .openMenuJs p::after{
 	content: url(../image/gambMenu.png);
@@ -571,6 +572,8 @@ body{
 	display: flex;
 	color: #fff;
 	height: 23px;
+	font-family: "GothamPro";
+	font-size: 1rem;
 }
 .closeMenuJs p::after{
 	content: url(../image/closeMenu.png);
@@ -792,7 +795,7 @@ body{
 
 .topHeader2{
 	padding-top: 2.8125rem;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	position: relative;
 	z-index: 25;
 }
@@ -813,6 +816,39 @@ body{
 }
 .topHeader__right2{
 	position: relative;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+}
+.topHeader__right2--search{
+	margin-right: 3.5rem;
+}
+.topHeader__right2--search p{
+	margin: 0;
+	font-size: .875rem;
+	font-family: "GothamPro";
+	color: #000;
+	position: relative;
+}
+.topHeader__right2--search p:after{
+	content: "\f002";
+	font-family: "FontAwesome";
+	display: block;
+	position: absolute;
+	right: -20px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.topHeader__right2--search:hover{
+	cursor: pointer;
 }
 .topHeader__right--OpenMenu2{
 	top: 0;
@@ -841,7 +877,7 @@ body{
 .openMenuJs2 p{
 	margin: 0;
 	text-transform: uppercase;
-	font-family: Sans-serif;
+	font-family: "GothamPro";
 	-ms-align-items: center;
 	align-items: center;
 	display: -webkit-flex;
@@ -851,6 +887,7 @@ body{
 	display: flex;
 	color: #000;
 	height: 19px;
+	font-size: .875rem;
 }
 .openMenuJs2 p::after{
 	content: url(../image/gambMenuBlack.png);
@@ -1959,9 +1996,47 @@ body{
 .rewardLeft__form button:hover{
 	cursor: pointer;
 }
-
-
 .rewardRight{
 	margin-top: 7.625rem;
 	width: 42.12%;
+}
+/*************************************** Поиск ***************************************/
+.searchContent{
+	margin-top: 6.875rem;
+	padding: 1.25rem 3rem;
+}
+.searchContent > form{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: flex-start;
+	-ms-align-items: flex-end;
+	align-items: flex-end;
+}
+.searchPromoInput{
+	display: block;
+	outline: 0;
+	border: 0;
+	border-bottom: 1px solid #313131;
+	color: #333;
+	font-family: "GothamPro";
+	font-size: 1.25rem;
+	width: 100%;
+	max-width: 970px;
+	height: 44px;
+	line-height: 2.75rem;
+}
+.searchContent > form > button[type = "submit"]{
+	outline: 0;
+	background: none;
+	color: #313131;
+	height: 32px;
+	line-height: 2rem;
+	font-family: "GothamPro";
+	border: 1px solid #313131;
+	width: 100%;
+	max-width: 133px;
+	font-size: .875rem;
 }
