@@ -1,9 +1,24 @@
 $(document).ready(function(){
-
-
+  var sec1 =$(".sec1");
+  var contentSlide1__wrapper = $(".contentSlide1__wrapper");
+  var buttonCloseMenu = $(".closeMenuJs");
+  var centerContent2Page = $(".centerContent");
+  var buttonCloseMenu2 = $(".closeMenuJs2");
+  $(buttonCloseMenu2).hide();
   $('#fullpage').fullpage({
     sectionsColor: ['#fff', '#fff'],
     anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+    afterLoad: function(){
+      console.log("1");
+      if ($(sec1).hasClass("active")) {
+        $(buttonCloseMenu).show();
+        $(buttonCloseMenu2).hide();
+      }else {
+        $(buttonCloseMenu2).show();
+        $(buttonCloseMenu).hide();
+      }
+    },
+
   });
 
   $('#owl-carousel').owlCarousel({
@@ -105,7 +120,7 @@ $(document).ready(function(){
     mouseDrag : true,
     touchDrag : true,
     margin: 40,
-    baseClass : "page2Carousel3",
+    baseClass : "page2Carousel",
     autoHeight : false,
     navText:false,
     // // move navContainer outside the primary owl wrapper
@@ -117,6 +132,28 @@ $(document).ready(function(){
     // animateOut: 'fadeOut'
   });
 
+  $("#searchCarousel").owlCarousel({
+    items: 4,
+    // dots: true,
+    loop: true,
+    autoplay: true,
+    nav: true,
+    autoplayTimeout: 6000,
+    smartSpeed: 1000,
+    mouseDrag : true,
+    touchDrag : true,
+    margin: 40,
+    baseClass : "customNavSearchtWrapper",
+    autoHeight : false,
+    navText:false,
+    // // move navContainer outside the primary owl wrapper
+    // navContainer: '#customNav',
+    // move dotsContainer outside the primary owl wrapper
+    navContainer: '.customNavSearch',
+    // navClass: '.customNav2page',
+    // navElement: 'div class="customNav"> </div'
+    // animateOut: 'fadeOut'
+  });
 
 
 
@@ -183,8 +220,8 @@ $(document).ready(function(){
 
 
   var buttonOpenMenu = $(".openMenuJs");
-  var buttonCloseMenu = $(".closeMenuJs");
   var buttonOpenMenu2 = $(".openMenuJs2");
+  var buttonCloseMenu = $(".closeMenuJs");
   var buttonCloseMenu2 = $(".closeMenuJs2");
   var searchPromo = $(".topHeader__right2--search");
 
@@ -194,6 +231,8 @@ $(document).ready(function(){
   $(buttonOpenMenu).on("click", function(){
     $(menu).fadeIn();
     $(buttonOpenMenu).hide();
+    $(buttonOpenMenu2).hide();
+    $(searchPromo).hide();
     $(buttonCloseMenu).fadeIn();
 
   });
@@ -201,26 +240,33 @@ $(document).ready(function(){
   $(buttonCloseMenu).on("click", function(){
     $(menu).hide();
     $(buttonCloseMenu).hide();
+    $(buttonCloseMenu2).hide();
+    $(buttonOpenMenu).fadeIn();
+    $(buttonOpenMenu2).fadeIn();
+    $(searchPromo).fadeIn();
     $(buttonOpenMenu).removeClass("fadeInRight").fadeIn();
   });
 
 
-  var menu2 = $(".topHeader__right--OpenMenu2");
-  $(menu2).hide();
+  $(menu).hide();
   $(buttonCloseMenu2).hide();  
   $(buttonOpenMenu2).on("click", function(){
-    $(menu2).fadeIn();
+    $(menu).fadeIn();
     $(buttonOpenMenu2).hide();
+    $(buttonOpenMenu).hide();
     $(searchPromo).hide();
-    $(buttonCloseMenu2).fadeIn();
+    $(buttonCloseMenu).hide();
+    $(buttonCloseMenu2).show();
 
   });
 
   $(buttonCloseMenu2).on("click", function(){
-    $(menu2).hide();
+    $(menu).hide();
     $(buttonCloseMenu2).hide();
+    $(buttonOpenMenu2).fadeIn();
     $(searchPromo).fadeIn();
-    $(buttonOpenMenu2).removeClass("fadeInRight").fadeIn();
+    $(buttonOpenMenu).removeClass("fadeInRight").fadeIn();
+    $(buttonOpenMenu).fadeIn();
   });
 
 
@@ -234,6 +280,7 @@ $(document).ready(function(){
     if ($(searchContent).is(":visible")) {
       $(searchContent).hide();
       $(centerContent2Page).fadeIn();
+      $(grid2).fadeIn();
     }else{
      $(centerContent2Page).hide();
      $(grid2).hide();
@@ -314,7 +361,7 @@ $(document).ready(function(){
     }else{
       console.log("true");
       $(twoPass).addClass("passValid");
-      $(blockEmailSu).addClass("passValid");
+      $(blockEmailSu).removeClass("emailInvalid").addClass("passValid");
       $(formSignUp).submit();
       return true}
     });

@@ -36,6 +36,9 @@ body{
 	margin: 0;
 	padding: 0;
 }
+#fullpage{
+	position: relative;
+}
 .hid{
 	opacity: 0;
 }
@@ -248,14 +251,14 @@ body{
 }
 .topHeader__right--OpenMenu{
 	top: 0;
-	position: absolute;
-	right: -0;
+	position: fixed;
+	right: 0;
+	bottom: 0;
 	width: 360px;
 	background-color: #232323;
 	min-height: 100vh;
 	color: #fff;
 	z-index: 25;
-	display: none;
 }
 .OpenMenuMain{
 	padding: 2.625rem 4rem;
@@ -2002,8 +2005,8 @@ body{
 }
 /*************************************** Поиск ***************************************/
 .searchContent{
-	margin-top: 6.875rem;
-	padding: 1.25rem 3rem;
+	margin-top: 6rem;
+	
 }
 .searchContent > form{
 	display: -webkit-flex;
@@ -2014,6 +2017,8 @@ body{
 	justify-content: flex-start;
 	-ms-align-items: flex-end;
 	align-items: flex-end;
+	margin-bottom: 6.375rem;
+	padding: 1.25rem 3rem;
 }
 .searchPromoInput{
 	display: block;
@@ -2027,6 +2032,7 @@ body{
 	max-width: 970px;
 	height: 44px;
 	line-height: 2.75rem;
+	background: none;
 }
 .searchContent > form > button[type = "submit"]{
 	outline: 0;
@@ -2039,4 +2045,122 @@ body{
 	width: 100%;
 	max-width: 133px;
 	font-size: .875rem;
+	-webkit-transition: .3s ;
+	-o-transition: .3s ;
+	transition: .3s background-color color; 
+}
+.searchContent > form > button[type = "submit"]:hover{
+	background-color: #313131;
+	cursor: pointer;
+	color: #fff;
+}
+
+/*******************************************/
+.searchContentItemWrapper{
+	position: relative;
+	z-index: 25;
+}
+#searchCarousel{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 0 3.75rem;
+}
+.itemSearch{
+	width: 100%;
+	max-height: 100%;
+	min-height: 529px;
+	position: relative;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-top: 0.9375rem;
+
+}
+.itemSearch a{
+	text-decoration: none;
+}
+.itemSearch__img{
+	width: 97px;
+	height: 389px;
+	position: relative;
+	margin: 0 auto;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-bottom: 1.4375rem;
+}
+.itemSearch__name{
+	margin-bottom: 0.3125rem;
+}
+.itemSearch__name h3{
+	font-family: "GothamPro-Medium";
+	font-size: 1.5rem;
+	color: #010101;
+	margin: 0;
+	text-align: center;
+}
+.itemSearch__description{
+	margin-bottom: 1.375rem;
+}
+.itemSearch__description p{
+	font-family: "GothamPro";
+	margin: 0;
+	text-align: center;
+	font-size: 0.75rem;
+	color: #858585;
+}
+.itemSearch__price{
+	width: 49.42%;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #232323;
+	height: 33px;
+	line-height: 2.0625rem;
+}
+.itemSearch__price p{
+	margin: 0;
+	color: #fff;
+	font-size: 1rem;
+	font-family: "GothamPro-Bold";
+}
+
+
+.customNavSearchtWrapper{
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index: 25;
+
+}
+.customNavSearch{
+	position: relative;
+}
+.customNavSearch:hover{
+	cursor: pointer;
+}
+.customNavSearch .owl-prev{
+	background-image: url(../image/arrowSliderLeft.png);
+	height: 26px;
+	width: 30px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-bottom: 0.9375rem;
+}
+.customNavSearch .owl-next{
+	background-image: url(../image/arrowSliderLeft.png);
+	height: 26px;
+	width: 30px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
